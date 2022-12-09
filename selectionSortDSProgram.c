@@ -17,17 +17,18 @@ int main() {
 	// Accept the elements from the keyboard
 	printf("[ QUESTION ] Enter the element of an array\n");
 	for (i=0; i<n; i++)
-		scanf("%d", arr[i]);   /* Segmentation fault error */
-
+		scanf("%d", &arr[i]);   
+	
 
 	// Logic Implementation (Main Part)
 	for (i=0; i<n; i++) {
-		int index = arr[i];
+		int index = i;
 		for (int j=i; j<n; j++)
-			if (arr[index] < arr[j])
-				index = j, arr[index] = arr[j];
-				
-		SWAP(arr[i], arr[j]);
+			if (arr[index] > arr[j])
+				index = j;
+		
+		if (index != i) 	
+			SWAP(arr[i], arr[index]);
 	}
 
 
@@ -35,6 +36,7 @@ int main() {
 	printf("[ INFO ] Sorted array : ");
 	for (i=0; i<n; i++)
 		printf("%d ", arr[i]);
+
 
 	free(arr);
 	return 0;
