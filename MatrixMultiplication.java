@@ -18,7 +18,7 @@ class Matrix {
     void fillElements() {
         for (int i=0; i<row; i++)
             for (int j=0; j<col; j++) {
-                System.out.print("Enter " + i + ", " + j + " element : ");
+                // System.out.print("Enter " + i + ", " + j + " element : ");
                 matrix[i][j] = scan.nextInt();
             }
     }
@@ -32,8 +32,11 @@ public class MatrixMultiplication {
         Matrix B = new Matrix();
 
         // Accepting no of row and col from the user
+        System.out.println("\nMatricx A");
         A.getRowCol();
+        System.out.println("\nMatrix B");
         B.getRowCol();
+
 
         // Checking validity
         if (A.col != B.row) {
@@ -42,10 +45,14 @@ public class MatrixMultiplication {
         }
 
         // Accepting elements from the user
+        System.out.println("\nEnter the elements for Matrix A");
         A.fillElements();
+        
+        System.out.println("\nEnter the elements for Matrix B");
         B.fillElements();
 
         // Manipulating matrix for matrix multiplication
+        System.out.println("\nMultiplication of Matrix A and Matrix B");
         for (int i = 0; i < A.row; i++) {
             for (int j = 0; j < B.col; j++) {
                 int temp = 0;
