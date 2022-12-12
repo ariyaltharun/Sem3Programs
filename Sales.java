@@ -59,10 +59,14 @@ public class Sales {
         System.out.print("Enter a value : ");
         float value = scan.nextFloat();
 
+	
         int salesExceedsValue=0;
         for (int i=0 ;i<5 ;i++)
-            if (sales[i] > value)
+            if (sales[i] > value) {
                 salesExceedsValue++;
+                System.out.println("Person ID : " + ID[i]);
+                System.out.println("Person Sales : " + sales[i]);              
+            }
 
         System.out.println("Number of sales people who exceeds " + value + " = " + salesExceedsValue);
         System.out.println("------------------------------");
